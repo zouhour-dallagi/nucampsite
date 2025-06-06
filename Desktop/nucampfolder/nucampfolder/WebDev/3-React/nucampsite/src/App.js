@@ -1,5 +1,5 @@
 import React from 'react';
-import CampsitesList from './features/campsites/CampsitesList';
+import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import Footer from './components/Footer';
 import './App.css';
 import Header from './components/Header';
@@ -23,7 +23,7 @@ function App() {
         </a>
         
         <Header/>
-        <CampsitesList/>
+        <CampsitesDirectoryPage/>
         <Footer/>
         
       </header>
