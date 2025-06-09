@@ -7,12 +7,12 @@ import { CAMPSITES } from '../../app/shared/CAMPSITES';
 const CampsitesList = ({setCampsiteId}) => {
   return (
     <Row className="ms-auto">
-    {CAMPSITES.map((campsite) => {
-        return(
+    {CAMPSITES.map((campsite) => (
+      
         <Col md="5" className="m-4" key={campsite.id} onClick={()=>setCampsiteId(campsite.id)}>
         <CampsiteCard campsite={campsite} />
-         </Col>);
-})}
+         </Col>)
+)}
 </Row>
   );
 };
