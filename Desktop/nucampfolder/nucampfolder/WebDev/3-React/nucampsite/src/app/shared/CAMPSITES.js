@@ -9,7 +9,7 @@ export const CAMPSITES = [
         name: 'React Lake Campground',
         image: reactLakeImg,
         elevation: 1233,
-        featured: false,
+        featured: true,
         description:
             'Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.'
     },

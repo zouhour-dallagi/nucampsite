@@ -3,6 +3,7 @@ import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
 import {Routes,Route} from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
 
 import Footer from './components/Footer';
 import './App.css';
@@ -32,6 +33,8 @@ function App() {
             <Route path="contact" element={<ContactPage/>} />
             <Route path="directory" element={<CampsitesDirectoryPage/>}/>
         </Routes>
+        <AboutPage/>
+        
         <Footer/>
         
       </header>
