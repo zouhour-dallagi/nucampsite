@@ -18,7 +18,7 @@ export const CAMPSITES = [
         name: 'Chrome River Campground ',
         image: chromeRiverImg,
         elevation: 877,
-        featured: false,
+        featured: true,
         description:
             'Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River.'
     },
@@ -27,7 +27,7 @@ export const CAMPSITES = [
         name: 'Breadcrumb Trail Campground',
         image: breadCrumbImg,
         elevation: 2901,
-        featured: false,
+        featured: true,
         description:
             'Let NuCamp be your guide to this off-the-beaten-path, hike-in-only campground.'
     },
