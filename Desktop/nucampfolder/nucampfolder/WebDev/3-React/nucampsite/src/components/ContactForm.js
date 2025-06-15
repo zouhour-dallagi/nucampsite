@@ -2,8 +2,10 @@ import { Button,Label,Col,FormGroup } from "reactstrap";
 import { Formik,Field,Form } from "formik";
 
 const ContactForm=()=>{
-    const handlesubmit=(values)=>{
+    const handlesubmit=(values,{resetForm})=>{
         console.log('form submitted with', values);
+        console.log('in json format', JSON.stringify(values));
+        resetForm();
     };
     return (
         <Formik
@@ -16,7 +18,8 @@ const ContactForm=()=>{
                 contactType: 'By Phone',
                 feedback: ''
 
-            }}>
+            }}
+            onSubmit={handlesubmit}>
                 <Form>
                     <FormGroup row >
                         <Label htmlFor='firstName' md='2'>
@@ -87,7 +90,7 @@ const ContactForm=()=>{
         <FormGroup row >
                       <Col md={{ size: 10, offset: 2 }}>
                         <Button type='submit' color='primary'>
-                            Submit
+                            Send feedback
                         </Button>  
                         </Col>
          </FormGroup>
