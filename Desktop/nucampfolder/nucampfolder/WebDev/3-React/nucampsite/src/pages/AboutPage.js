@@ -5,10 +5,10 @@ import PartnersList from "../features/partners/PartnersList";
 const AboutPage=()=>{
     return(
         <Container>
-            <SubHeader current="About" />
+            <SubHeader current="About Us" />
             <Row className='row-content'>
                 <Col sm='6'>
-                <h3>Our mission</h3>
+                <h3>Our Mission</h3>
                 <p>
                         We present a curated database of the best campsites in the
                         vast woods and backcountry of the World Wide Web Wilderness.
