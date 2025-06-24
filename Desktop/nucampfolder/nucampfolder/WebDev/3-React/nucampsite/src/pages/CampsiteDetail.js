@@ -1,7 +1,16 @@
 import { Card,CardImg,CardText,CardBody,Col } from "reactstrap";
 import CommentsList from "../features/comments/CommentsList";
-const CampsiteDetail=({campsite})=>{
-    const { image, name, description ,comments,id} = campsite;
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { selectAllCampsiteById } from "../features/campsites/campsitesSlice";
+const CampsiteDetail=()=>{
+    const {campsiteId}= useParams();
+     const campsite = useSelector(selectAllCampsiteById(campsiteId));
+    console.log('campsite:', campsite);
+    if (!campsite) {
+        return <p>Campsite not found</p>;
+    }
+      const { image, name, description, comments, id } = campsite;
     return(
          <>
        <Col md='12' className='m-4'>
