@@ -1,5 +1,4 @@
 import React from "react";
-
 import{Row,Col} from 'reactstrap';
 import CampsiteCard from "./CampsiteCard";
 import { CAMPSITES } from '../../app/shared/CAMPSITES';
@@ -7,12 +6,12 @@ import { CAMPSITES } from '../../app/shared/CAMPSITES';
 const CampsitesList = ({setCampsiteId}) => {
   return (
     <Row className="ms-auto">
-    {CAMPSITES.map((campsite) => (
+    {CAMPSITES.map((campsite) =>{return (
       
-        <Col md="5" className="m-4" key={campsite.id} onClick={()=>setCampsiteId(campsite.id)}>
+        <Col md="5" className="m-4" key={campsite.id} onClick={() => setCampsiteId(campsite.id)}  >
         <CampsiteCard campsite={campsite} />
          </Col>)
-)}
+    })}
 </Row>
   );
 };

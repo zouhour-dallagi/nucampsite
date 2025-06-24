@@ -1,17 +1,21 @@
 import { Card,CardImg,CardText,CardBody,Col } from "reactstrap";
+import CommentsList from "../features/comments/CommentsList";
 const CampsiteDetail=({campsite})=>{
-    const { image, name, description } = campsite;
+    const { image, name, description ,comments,id} = campsite;
     return(
-        
+         <>
        <Col md='12' className='m-4'>
-            <card>
+            <Card>
                 <CardImg top src={image} alt={name}/>
                 <CardBody>
                     <CardText>{description}</CardText>
                 </CardBody>
-            </card>    
+            </Card>    
         </Col>
-    );
-
+        <Col md="12" className="m-4">
+        <CommentsList comments={comments} campsiteId={id} />
+      </Col>
+    
+</>);
 }
 export default CampsiteDetail;

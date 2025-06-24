@@ -3,14 +3,14 @@ import { useState,useEffect } from "react";
 import { useSpring,animated } from "react-spring";
 const AnimatedDisplayCard=({item})=>{
     const{image,name,description}=item;
-    const [toggle,setTolggle]=useState(false);
+    const [toggle,setToggle]=useState(false);
     const animatedStyle=useSpring({
         opacity:toggle?1:0,
         transform: toggle?'scale(1,1)':'scale(1,0)',
         config: {duration:500}
     });
     useEffect(()=>{
-        setTolggle(true);
+        setToggle(true);
     },[])
      return(
         <animated.div style={animatedStyle}>
