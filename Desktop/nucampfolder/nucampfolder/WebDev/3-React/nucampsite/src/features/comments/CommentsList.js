@@ -1,9 +1,13 @@
 import React from "react";
 import  CommentForm  from "./CommentForm";
 import {COMMENTS} from '../../app/shared/COMMENTS';
-
+import { useSelector } from "react-redux";
+import {selectAllCampsiteById} from "./commentsSlice"
 const CommentsList = ({ campsiteId }) => {
-      console.log("CommentsList received campsiteId:", campsiteId);
+    const comments = useSelector(selectCommentsByCampsiteId(campsiteId));
+    console.log("CommentsList received campsiteId:", campsiteId);
+    console.log("Filtered comments:", comments);
+
       
     return (
             <div>

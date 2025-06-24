@@ -1,9 +1,8 @@
 import { Col } from 'reactstrap';
 import Partner from './Partner';
-import { selectAllPartners } from './PartnersSlice';
-
+import { selectFeaturedPartner } from './partnersSlice';
 function PartnersList() {
-    const partners = selectAllPartners();
+    const partners = useSelector(selectAllPartners);
 
     return (
         <Col className="mt-4">
