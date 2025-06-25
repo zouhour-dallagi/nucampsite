@@ -1,7 +1,7 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 import {PARTNERS} from '../../app/shared/PARTNERS';
-import { useSelector } from 'react-redux';
+
 
 const initialState = {
     partnersArray: PARTNERS

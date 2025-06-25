@@ -3,7 +3,7 @@ import {Col,Row} from 'reactstrap';
 //import DisplayCard from "./DisplayCard";
 import { selectFeaturedCampsite } from "../campsites/campsitesSlice";
 import { selectFeaturedPromotion } from "../promotion/promotionsSlice";
-import {selectFeaturedPartner} from "../partners/PartnersSlice"
+import { selectFeaturedPartner } from "../partners/PartnersSlice";
 import AnimatedDisplayCard from "./AnimatedDisplayCard";
 import { useSelector } from "react-redux";
 const DisplayList=()=>{
