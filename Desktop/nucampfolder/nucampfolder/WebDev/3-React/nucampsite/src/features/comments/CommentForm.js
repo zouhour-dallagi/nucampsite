@@ -2,18 +2,23 @@ import { useState } from "react";
 import { Button,Modal,ModalHeader,ModalBody,FormGroup,Label } from "reactstrap";
 import { Formik,Field,Form,ErrorMessage } from "formik";
 import { validateContactForm } from "../../utils/validateCommentForm";
+import { useDispatch } from "react-redux";
+import { addComment } from "./commentsSlice";
 const CommentForm=({campsiteId})=>{
     const [modalOpen,setModalOpen]=useState(false);
+    const dispatch = useDispatch();
  const handleSubmit=(values)=>{
    
-     const comment= {
+     const comment = {
             id: values.id,
             campsiteId: parseInt(campsiteId),
             rating: parseInt(values.rating),
             text: values.commentText,
-            author: values.author
+            author: values.author,
+            date: new Date(Date.now()).toISOString()
         };
         console.log(comment);
+        dispatch(addComment(comment));
         setModalOpen (false)
         }
     return(
@@ -73,6 +78,12 @@ const CommentForm=({campsiteId})=>{
                         
                         <FormGroup>
                             <Label htmlFor="commentText"> Comment</Label>
+                            <Field
+    name='commentText'
+    as='textarea'
+    placeholder='Write your comment'
+    className='form-control'
+  />
                         </FormGroup>
                          <Button type='submit' color='primary'>
                                 Submit

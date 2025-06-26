@@ -5,7 +5,8 @@ const initialState={
 };
 const campsitesSlice=createSlice({
     name:'campsites',
-    initialState
+    initialState,
+    reducers: {}
 });
 export const campsitesReducer= campsitesSlice.reducer;
 
