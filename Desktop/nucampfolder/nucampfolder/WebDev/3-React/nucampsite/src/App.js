@@ -10,10 +10,11 @@ import Header from './components/Header';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCampsites } from './features/campsites/campsitesSlice';
-function App() {
+import { fetchPartners } from './features/partners/PartnersSlice';
       const dispatch = useDispatch();
        useEffect(() => {
         dispatch(fetchCampsites());
+        dispatch(fetchPartners());
     }, [dispatch]);
   return (
     <div className="App">

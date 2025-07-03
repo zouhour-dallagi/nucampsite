@@ -1,21 +1,27 @@
-import { Col } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 import Partner from './Partner';
 import { useSelector } from 'react-redux';
-import { selectAllPartners, selectFeaturedPartner } from './PartnersSlice';
+import { selectAllPartners } from './PartnersSlice';
+import { Error, Loading } from '../../components/Error';
+
 function PartnersList() {
     const partners = useSelector(selectAllPartners);
+    const isLoading = useSelector((state) => state.partners.isLoading);
+    const errMsg = useSelector((state) => state.partners.errMsg);
 
-    return (
+    return isLoading ? (
+        <Loading />
+    ) : errMsg ? (
+        <Error errMsg={errMsg} />
+    ) : (
         <Col className="mt-4">
-            {
-                partners.map((partner) => {
-                    return (
-                        <div className="d-flex mb-5" key={partner.id}>
-                            <Partner partner={partner} />
-                        </div>
-                    );
-                })
-            }
+            <Row>
+                {partners.map((partner) => (
+                    <div className="d-flex mb-5" key={partner.id}>
+                        <Partner partner={partner} />
+                    </div>
+                ))}
+            </Row>
         </Col>
     );
 }
