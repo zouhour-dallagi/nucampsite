@@ -31,7 +31,8 @@ const promotionsSlice = createSlice({
             })
             .addCase(fetchPromotions.rejected, (state, action) => {
                 state.isLoading = false;
-                state.errMess = action.error ? action.error.message
+                state.errMess = action.error
+                    ? action.error.message
                     : 'Fetch failed';
             });
     }
