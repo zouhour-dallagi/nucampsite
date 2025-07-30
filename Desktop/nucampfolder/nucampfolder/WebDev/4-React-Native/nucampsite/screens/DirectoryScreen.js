@@ -3,7 +3,7 @@ import { Title } from "react-native-elements";
 import { useSelector } from "react-redux";
 import { baseUrl } from "../shared/baseURL";
 import Loading from'../components/LoadingComponent';
-
+import * as Animatable from 'react-native-animatable'
 const DirectoryScreen = ({ navigation }) => {
     const campsites = useSelector((state) => state.campsites);
 
@@ -20,6 +20,7 @@ const DirectoryScreen = ({ navigation }) => {
 
     const renderDirectoryItem = ({ item: campsite }) => {
         return (
+            <Animatable.View animation='fadeInRightBig' duration={2000}>
             <Title
                 title={campsite.name}
                 caption={campsite.description}
@@ -29,6 +30,7 @@ const DirectoryScreen = ({ navigation }) => {
                 }
                 imageSrc={{ uri: baseUrl + campsite.image }}
             />
+            </Animatable.View>
         );
     };
     return (

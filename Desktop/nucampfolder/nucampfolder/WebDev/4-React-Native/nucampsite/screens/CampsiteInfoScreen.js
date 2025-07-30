@@ -14,6 +14,8 @@ import RenderCampsite from '../features/campsites/RenderCampsite';
 import { Rating, Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { postComment } from '../features/comments/commentsSlice';
+import * as Animatable from 'react-native-animatable';
+
 const CampsiteInfoScreen = ({ route }) => {
     const { campsite } = route.params;
     const comments = useSelector((state) => state.comments.commentsArray);
@@ -47,6 +49,7 @@ const CampsiteInfoScreen = ({ route }) => {
 
     const renderCommentItem = ({ item }) => {
         return (
+            <Animatable.View animation='fadeInUp' duration={2000} delay={1000}>
             <View style={styles.commentItem}>
                 <Text style={{ fontSize: 14 }}>{item.text}</Text>
                 <Rating
@@ -57,6 +60,7 @@ const CampsiteInfoScreen = ({ route }) => {
                 />
                 <Text style={{ fontSize: 12 }}>{`-- ${item.author}, ${item.date}`}</Text>
             </View>
+            </Animatable.View>
         );
     };
 
